@@ -24,7 +24,7 @@ const approuter = createBrowserRouter([
 
 const App = () => {
   return (
-    <div>
+    <div >
       <Head />
       <RouterProvider router={approuter} />
     </div>

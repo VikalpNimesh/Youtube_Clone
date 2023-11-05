@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import VideoBox from "./VideoBox";
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
 // import Watchpage from "./Watchpage";
 
 const VideoCard = () => {
@@ -8,11 +9,16 @@ const VideoCard = () => {
     getVideos();
   }, []);
   const [video, setvideo] = useState([]);
+  const searching = useSelector(store=> store.searchItem)
+  console.log(searching);
 
   const getVideos = async () => {
     const response = await fetch(
-      "https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&chart=mostPopular&maxResults=50&regionCode=IN&key=AIzaSyCEt4pRiJ_tNzpU7BVSLhH7Ao3v3ugnpWg"
+      "https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&chart=mostPopular&maxResults=50&q=ShahRukhKhan&regionCode=IN&key=AIzaSyCEt4pRiJ_tNzpU7BVSLhH7Ao3v3ugnpWg"
     );
+    // const response = await fetch(
+    //   "https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=25&q=dunki&key=AIzaSyCEt4pRiJ_tNzpU7BVSLhH7Ao3v3ugnpWg"
+    // );
 
     const data = await response.json();
     setvideo(data?.items);
@@ -20,9 +26,11 @@ const VideoCard = () => {
 
   return (
     <>
-      <div className=" flex flex-wrap  gap-8 justify-center  ">
+      <div className=" flex flex-wrap  justify-between mt-6 mr-4  ">
         {video.map((video) => (
-          <Link to={"/watch?v=" +video.id} key={video.id}><VideoBox  info={video} /></Link>
+          <Link to={"/watch?v=" + video.id} key={video.id}>
+            <VideoBox info={video} />
+          </Link>
         ))}
       </div>
     </>
