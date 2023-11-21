@@ -26,7 +26,7 @@ const VideoCard = () => {
 
   return (
     <>
-      <div className=" flex flex-wrap  justify-between mt-6 mr-4  ">
+      <div className=" flex flex-wrap  justify-evenly mt-6 mr-4  ">
         {video.map((video) => (
           <Link to={"/watch?v=" + video.id} key={video.id}>
             <VideoBox info={video} />

@@ -9,7 +9,7 @@ const Livechat = ({name,message}) => {
         />
         <div className=" pl-5 ">
           <h1 className=" font-semibold">{name}</h1>
-          <h1  className=' text-yellow-700'
+          <h1  className=' text-black'
           >
           {message}
           </h1>

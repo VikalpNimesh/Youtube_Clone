@@ -2,6 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+
+*{
+  margin: 0;
+  padding: 0;
+}
+
 .scrollBar::-webkit-scrollbar {
   width: 0.25em;
 }

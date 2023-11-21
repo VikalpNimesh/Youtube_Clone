@@ -50,7 +50,7 @@ const Head = () => {
   }, [searchQuery]);
 
   return (
-    <div className="  p-2  grid grid-flow-col shadow-md  ">
+    <div className="  p-2 flex   justify-evenly md:grid md:grid-flow-col shadow-md md:justify-between  ">
       <div className="  col-span-1 flex gap-2 items-center overflow-hidden">
         <img
           className=" h-10 cursor-pointer"
@@ -58,13 +58,13 @@ const Head = () => {
           src="https://banner2.cleanpng.com/20180628/zaz/kisspng-computer-icons-hamburger-button-menu-new-menu-5b34724be5a1f0.5796308115301637879406.jpg"
           alt="menu"
         />
-        <img className=" h-10" src={logo_img} alt="Logo" />
+        <img className=" h-10 p-0" src={logo_img} alt="Logo" />
       </div>
 
       <div className=" relative col-span-10 flex justify-center">
         <div>
           <input
-            className=" w-[600px] outline-none text-lg px-3 pl-5 h-10 border-2 rounded-l-full border-gray-200"
+            className=" w-36 md:w-[600px] outline-none text-lg px-3  pl-5 h-10 border-2 rounded-l-full border-gray-200"
             type="text"
             placeholder="Search.."
             value={searchQuery}
@@ -73,7 +73,7 @@ const Head = () => {
             onBlur={() => setSearchHide(false)}
           />
           {searchHide && (
-            <div className=" absolute fixed w-[600px] rounded-2xl m-1  bg-gray-100  gap-2">
+            <div className=" absolute text-sm md:w-[600px] rounded-2xl m-1  bg-gray-100  gap-2">
               {searchsuggestion.map((s, i) => (
                 <ul className=" cursor-pointer" key={i}>
                   <li className=" p-2 pl-5 hover:bg-gray-200">{s}</li>
@@ -86,10 +86,10 @@ const Head = () => {
           onBlur={() => setSearchHide(false)}
           className=" px-4 py-2 bg-gray-300 rounded-r-full"
         >
-          Search
+          🔍
         </button>
       </div>
-      <div className="  col-span-1 flex  justify-end pr-7">
+      <div className="  col-span-1 flex  justify-end md:pr-4">
         <img
           className=" h-10 rounded-full  cursor-pointer"
           src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSppkoKsaYMuIoNLDH7O8ePOacLPG1mKXtEng&usqp=CAU"

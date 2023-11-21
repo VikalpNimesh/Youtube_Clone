@@ -7,20 +7,15 @@ import LivechatContainer from "./LivechatContainer";
 
 const Watchpage = () => {
   const [searchparam] = useSearchParams();
-  const dispatch = useDispatch();
 
-  useEffect(() => {
-    dispatch(closeMenu());
-  }, []);
 
   return (
     <div className=" p-1 m-auto ">
-      <div className=" p-3  flex  justify-center items-center">
+      <div className=" p-3  flex flex-col my-auto md:flex-row justify-center items-center">
         <iframe
-          width="800"
-          height="500"
-          className="
-          rounded-2xl"
+         
+          className=" w-screen h-[300px] md:w-[800px] md:h-[475px]
+      "
           src={"https://www.youtube.com/embed/" + searchparam.get("v")}
           title="YouTube video player"
           frameBorder="0"
