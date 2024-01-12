@@ -2,7 +2,7 @@ import PropTypes from "prop-types";
 
 const VideoBox = ({ info }) => {
  
-  const { snippet, statistics } = info;
+  const { snippet } = info;
   const { title, thumbnails } = snippet;
   // const { viewCount } = statistics;
 
@@ -22,13 +22,13 @@ const VideoBox = ({ info }) => {
   );
 };
 
-// VideoBox.propTypes = {
-//   info: PropTypes.shape({
-//     snippet: PropTypes.shape({
-//       title: PropTypes.string,
-//       thumbnails: PropTypes.string,
-//     })
-//   })
-// };
+VideoBox.propTypes = {
+  info: PropTypes.shape({
+    snippet: PropTypes.shape({
+      title: PropTypes.string,
+      thumbnails: PropTypes.string,
+    })
+  })
+};
 
 export default VideoBox;
