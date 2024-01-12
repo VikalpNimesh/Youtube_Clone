@@ -36,7 +36,7 @@ const Commentscontainer = () => {
   return (
     <div>
       <h1 className=" pl-5 font-extrabold text-xl">Comments :</h1>
-      <CommentList data={commentsData} />
+      <CommentList  data={commentsData} />
     </div>
   );
 };

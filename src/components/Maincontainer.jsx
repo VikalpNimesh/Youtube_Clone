@@ -5,11 +5,10 @@ import VideoCard from "./VideoCard"
 // import React from 'react'
 const Maincontainer = () => {
   return (
-    <div  className=" w-[1600px]" >
+    <div  className=" w-screen md:flex flex-col " >
       <ButtonList  />
       <VideoCard/>
-     
-
+    
     </div>
   )
 }

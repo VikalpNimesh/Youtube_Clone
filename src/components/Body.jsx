@@ -6,7 +6,7 @@ import Sidebar from "./Sidebar"
 const Body = () => {
    
   return (
-    <div className=" flex gap-7">
+    <div className="  w-screen h-screen">
     <Sidebar  />
    <Outlet/>
 

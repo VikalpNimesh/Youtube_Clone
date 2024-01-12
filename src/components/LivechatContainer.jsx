@@ -25,8 +25,10 @@ const LivechatContainer = () => {
   const [text, setText] = useState("");
 
   return (
-    <div className=" flex flex-col">
-      <div className=" w-[475px] h-[460px] ml-2 p-2 border border-black rounded-lg overflow-y-scroll flex flex-col-reverse ">
+    <div className=" flex flex-col mt-3">
+    <h1 className=" pl-3 font-bold text-2xl">Live Comments:</h1>
+      <div className=" md:w-[475px] md:h-[460px] h-[300px]   ml-2 p-2 border border-black rounded-lg overflow-y-scroll flex flex-col-reverse ">
+      
         {liveMessages.map((mess, i) => (
           <Livechat key={i} name={mess.name} message={mess.message} />
         ))}
